@@ -44,6 +44,7 @@ OR
 * Search for: `Text Domain: sofa` and replace with: `Text Domain: megatherium` in style.css.
 * Search for: <code>&nbsp;sofa</code> and replace with: <code>&nbsp;Megatherium</code>
 * Search for: `sofa-` and replace with: `megatherium-`
+* Search for file names that begin with `class-sofa` to and rename them to `class-megatherium`.
 
 Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
 
