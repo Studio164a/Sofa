@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Visionary
+ * @package Sofa
  */
 
 get_header(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php visionary_paging_nav(); ?>
+			<?php sofa_paging_nav(); ?>
 
 		<?php else : ?>
 

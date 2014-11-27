@@ -1,61 +1,61 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Visionary_Customizer_Styles' ) ) : 
+if ( ! class_exists( 'Sofa_Customizer_Styles' ) ) : 
 
 /**
- * Visionary Customizer Styles
+ * Sofa Customizer Styles
  *
- * @class 		Visionary_Customizer_Styles
+ * @class 		Sofa_Customizer_Styles
  * @author 		Studio 164a
  * @category 	Frontend
- * @package 	Visionary
+ * @package 	Sofa
  * @subpackage  Customizer
  * @since 		1.0.0
  */
-class Visionary_Customizer_Styles {
+class Sofa_Customizer_Styles {
 
 	/**
-	 * @var Visionary_Theme        $theme
+	 * @var Sofa_Theme        $theme
 	 */
 	private $theme;
 
 	/**
 	 * Creates an instance of this class. 
 	 * 
-	 * This can only be run on the visionary_theme_start hook. You should
+	 * This can only be run on the sofa_theme_start hook. You should
 	 * never need to instantiate it again (if you do, I'd love to hear
 	 * your use case).
 	 *
 	 * @static
 	 * 
-	 * @param 	Visionary_Theme 	$theme
+	 * @param 	Sofa_Theme 	$theme
 	 * @return 	void
 	 * @access 	public
 	 * @since 	1.0.0
 	 */
-	public static function start( Visionary_Theme $theme ) {
+	public static function start( Sofa_Theme $theme ) {
 		if ( ! $theme->is_start() ) {
 			return;
 		}
 
-		new Visionary_Customizer_Styles( $theme );
+		new Sofa_Customizer_Styles( $theme );
 	}
 
 	/**
 	 * Object constructor. 
 	 *
-	 * @param 	Visionary_Theme 	$theme
+	 * @param 	Sofa_Theme 	$theme
 	 * @return 	void
 	 * @access 	private
 	 * @since 	1.0.0
 	 */
-	private function __construct( Visionary_Theme $theme ) {
+	private function __construct( Sofa_Theme $theme ) {
 		$this->theme = $theme;
 
 		add_action( 'wp_head', array( $this, 'output_styles' ) );
 
-        do_action( 'visionary_customizer_styles', $this );
+        do_action( 'sofa_customizer_styles', $this );
 	}
 
     /**
@@ -67,7 +67,7 @@ class Visionary_Customizer_Styles {
      * @since   1.0.0
      */
     public static function get_transient_key() {
-        return 'Visionary_customizer_styles';
+        return 'Sofa_customizer_styles';
     }
 
 	/**
@@ -85,7 +85,7 @@ class Visionary_Customizer_Styles {
         /**
          * If we're in debug mode, regenerate the styles on every page load. 
          */
-        if ( defined( 'VISIONARY_DEBUG' ) && true === VISIONARY_DEBUG ) {
+        if ( defined( 'SOFA_DEBUG' ) && true === SOFA_DEBUG ) {
             $styles = false;
         }
 

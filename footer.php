@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Visionary
+ * @package Sofa
  */
 ?>
 
@@ -12,9 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'visionary' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'visionary' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'sofa' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'sofa' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'visionary' ), 'Visionary', '<a href="http://164a.com" rel="designer">Studio 164a</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'sofa' ), 'Sofa', '<a href="http://164a.com" rel="designer">Studio 164a</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

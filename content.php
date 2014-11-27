@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Visionary
+ * @package Sofa
  */
 ?>
 
@@ -10,7 +10,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php visionary_posted_on(); ?>
+			<?php sofa_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -19,20 +19,20 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'visionary' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'sofa' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'visionary' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'sofa' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php visionary_entry_footer(); ?>
+		<?php sofa_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

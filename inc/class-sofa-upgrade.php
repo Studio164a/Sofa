@@ -2,9 +2,9 @@
 /**
  * This file contains the class in charge of handling version upgrades. 
  *
- * @class 		Visionary_Upgrade
+ * @class 		Sofa_Upgrade
  * @version		1.0.0
- * @package		Visionary
+ * @package		Sofa
  * @subpackage	Upgrade
  * @category	Class
  * @author 		Studio164a
@@ -13,14 +13,14 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! class_exists( 'Visionary_Upgrade' ) ) : 
+if ( ! class_exists( 'Sofa_Upgrade' ) ) : 
 
 /**
- * Visionary_Upgrade
+ * Sofa_Upgrade
  *
  * @since 		1.0.0
  */
-class Visionary_Upgrade {
+class Sofa_Upgrade {
 
 	/**
 	 * Current database version. 
@@ -52,7 +52,7 @@ class Visionary_Upgrade {
 	 * @var 	string
 	 * @access 	private
 	 */
-	private $upgrade_log_key = 'visionary_upgrade_log';
+	private $upgrade_log_key = 'sofa_upgrade_log';
 	
 	/**
 	 * Option key for plugin version.
@@ -60,7 +60,7 @@ class Visionary_Upgrade {
 	 * @var 	string
 	 * @access 	private
 	 */
-	private $version_key = 'visionary_version';
+	private $version_key = 'sofa_version';
 
 	/**
 	 * Upgrade from the current version stored in the database to the live version. 
@@ -74,7 +74,7 @@ class Visionary_Upgrade {
 	 */
 	public static function upgrade_from( $db_version, $edge_version ) {
 		if ( self::requires_upgrade( $db_version, $edge_version ) ) {
-			new Visionary_Upgrade( $db_version, $edge_version );
+			new Sofa_Upgrade( $db_version, $edge_version );
 		}
 	}
 

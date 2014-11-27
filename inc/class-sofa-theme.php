@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Visionary_Theme' ) ) : 
+if ( ! class_exists( 'Sofa_Theme' ) ) : 
 
 /**
  * Core theme class. Everything starts here.
@@ -9,17 +9,17 @@ if ( ! class_exists( 'Visionary_Theme' ) ) :
  * The purpose of this class is to encapsulate all the core theme definitions
  * inside a single class, to avoid namespace collisions.
  *
- * @package 	Visionary
+ * @package 	Sofa
  * @subpackage 	Core
  * @author 		Studio 164a
  * @since 		1.0.0
  */
-class Visionary_Theme {
+class Sofa_Theme {
 
 	/**
 	 * The one and only class instance. 
 	 *
-	 * @var 	Visionary_Theme
+	 * @var 	Sofa_Theme
 	 * @static
 	 * @access  private
 	 */
@@ -43,14 +43,14 @@ class Visionary_Theme {
 	/**
 	 * Retrieve the class instance. If one hasn't been created yet, create it first. 
 	 *
-	 * @return 	Visionary_Theme
+	 * @return 	Sofa_Theme
 	 * @static
 	 * @access  public
 	 * @since 	1.0.0
 	 */
 	public static function get_instance() {
 		if ( is_null( self::$instance ) ) {
-			self::$instance = new Visionary_Theme();
+			self::$instance = new Sofa_Theme();
 		}
 
 		return self::$instance;
@@ -82,7 +82,7 @@ class Visionary_Theme {
 		 * to remove any of the hooks or filters called during 
 		 * this phase.
 		 */
-		do_action( 'visionary_theme_start', $this );
+		do_action( 'sofa_theme_start', $this );
 	}
 
 	/**
@@ -93,18 +93,18 @@ class Visionary_Theme {
 	 * @since 	1.0.0
 	 */
 	public function started() {
-		return did_action( 'visionary_theme_start' );
+		return did_action( 'sofa_theme_start' );
 	}
 
 	/**
-	 * Checks whether we are currently on the `visionary_theme_start` hook.
+	 * Checks whether we are currently on the `sofa_theme_start` hook.
 	 *	
 	 * @return 	boolean
 	 * @access  public
 	 * @since 	1.0.0
 	 */
 	public function is_start() {
-		return 'visionary_theme_start' == current_filter();
+		return 'sofa_theme_start' == current_filter();
 	}
 
 	/**
@@ -116,7 +116,7 @@ class Visionary_Theme {
 	 */
 	private function load_dependencies() {
 
-		require get_template_directory() . '/inc/class-visionary-customizer-styles.php';
+		require get_template_directory() . '/inc/class-sofa-customizer-styles.php';
 
 		require get_template_directory() . '/inc/functions/template-tags.php';
 	}
@@ -129,13 +129,13 @@ class Visionary_Theme {
 	 * @since 	1.0.0
 	 */
 	private function maybe_upgrade() {
-		$db_version = get_option( 'visionary_version' );
+		$db_version = get_option( 'sofa_version' );
 
 		if ( self::DATABASE_VERSION !== $db_version ) {
 
-			require_once( get_template_directory() . '/inc/class-visionary-upgrade.php' );
+			require_once( get_template_directory() . '/inc/class-sofa-upgrade.php' );
 
-			Visionary_Upgrade::upgrade_from( $db_version, self::DATABASE_VERSION );
+			Sofa_Upgrade::upgrade_from( $db_version, self::DATABASE_VERSION );
 		}
 	}
 
@@ -151,9 +151,9 @@ class Visionary_Theme {
 
         if ( $wp_customize ) {
 
-            require_once( get_template_directory() . '/inc/admin/class-visionary-customizer.php');
+            require_once( get_template_directory() . '/inc/admin/class-sofa-customizer.php');
 
-            add_action( 'visionary_theme_start', array( 'Visionary_Customizer', 'start' ) );
+            add_action( 'sofa_theme_start', array( 'Sofa_Customizer', 'start' ) );
         } 
 	}
 
@@ -168,7 +168,7 @@ class Visionary_Theme {
 
         if ( defined( 'JETPACK__VERSION' ) ) {
 
-            require_once( get_template_directory() . '/inc/jetpack/class-visionary-jetpack.php');
+            require_once( get_template_directory() . '/inc/jetpack/class-sofa-jetpack.php');
 
             Crafted_Jetpack::start( $this );
         }        
@@ -183,9 +183,9 @@ class Visionary_Theme {
 	 */
 	private function attach_hooks_and_filters() {
 		/**
-		 * Core theme classes hooked in on the `visionary_theme_start` hook. 
+		 * Core theme classes hooked in on the `sofa_theme_start` hook. 
 		 */
-		add_action( 'visionary_theme_start',	array( 'Visionary_Customizer_Styles', 'start' ) );
+		add_action( 'sofa_theme_start',	array( 'Sofa_Customizer_Styles', 'start' ) );
 
 		/**
 		 * Methods within this class that are hooked into core WordPress action hooks. 
@@ -215,7 +215,7 @@ class Visionary_Theme {
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'visionary', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'sofa', get_template_directory() . '/languages' );
 
 		/** 
 		 * Add default posts and comments RSS feed links to head.
@@ -233,7 +233,7 @@ class Visionary_Theme {
 		 * This theme uses wp_nav_menu() in one location.
 		 */
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'visionary' ),
+			'primary' => __( 'Primary Menu', 'sofa' ),
 		) );
 
 		/**
@@ -264,7 +264,7 @@ class Visionary_Theme {
 	 */
 	public function setup_sidebars() {
 		register_sidebar( array(
-			'name'          => __( 'Sidebar', 'visionary' ),
+			'name'          => __( 'Sidebar', 'sofa' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -283,11 +283,11 @@ class Visionary_Theme {
 	 * @since 	1.0.0
 	 */
 	public function setup_scripts() {
-		wp_enqueue_style( 'visionary-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'sofa-style', get_stylesheet_uri() );
 
-		wp_enqueue_script( 'visionary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+		wp_enqueue_script( 'sofa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-		wp_enqueue_script( 'visionary-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script( 'sofa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -345,7 +345,7 @@ class Visionary_Theme {
 
 		// Add a page number if necessary:
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'visionary' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'sofa' ), max( $paged, $page ) );
 		}
 
 		return $title;

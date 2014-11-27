@@ -64,7 +64,7 @@ module.exports = function(grunt) {
                             '!sass', 
                             '!sass/**'
                         ], 
-                        dest: '../../themes/visionary'
+                        dest: '../../themes/sofa'
                     }
                 ], 
                 verbose: true
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
                     cwd: '',                    // Directory of files to internationalize.
                     domainPath: '/languages',   // Where to save the POT file.                    
                     mainFile: 'style.css',      // Main project file.
-                    potFilename: 'visionary.pot', // Name of the POT file.
+                    potFilename: 'sofa.pot', // Name of the POT file.
                     type: 'wp-theme',           // Type of project (wp-plugin or wp-theme).
                     updateTimestamp: true       // Whether the POT-Creation-Date should be updated without other changes.
                 }

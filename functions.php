@@ -1,16 +1,16 @@
 <?php
 /**
- * Core functions and definitions for Visionary Theme.
+ * Core functions and definitions for Sofa Theme.
  *
- * @package 	Visionary
+ * @package 	Sofa
  */
 
-require_once( 'inc/class-visionary-theme.php' );
+require_once( 'inc/class-sofa-theme.php' );
 
 /**
  * Start the theme. 
  */
-visionary_get_theme();
+sofa_get_theme();
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -26,16 +26,16 @@ if ( ! isset( $content_width ) ) {
  * scripts and stylesheets are NOT cached or minified 
  * to make debugging easier. 
  */
-if ( ! defined( 'VISIONARY_DEBUG' ) ) {
-	define( 'VISIONARY_DEBUG', false );
+if ( ! defined( 'SOFA_DEBUG' ) ) {
+	define( 'SOFA_DEBUG', false );
 }
 
 /**
- * Return the one true instance of the Visionary_Theme.
+ * Return the one true instance of the Sofa_Theme.
  * 
- * @return 	Visionary_Theme
+ * @return 	Sofa_Theme
  * @since 	1.0.0
  */
-function visionary_get_theme() {
-	return Visionary_Theme::get_instance();
+function sofa_get_theme() {
+	return Sofa_Theme::get_instance();
 }

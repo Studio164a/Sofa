@@ -1,22 +1,22 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Visionary_Customizer' ) ) : 
+if ( ! class_exists( 'Sofa_Customizer' ) ) : 
 
 /**
- * Visionary Customizer
+ * Sofa Customizer
  *
- * @class       Visionary_Customizer
+ * @class       Sofa_Customizer
  * @author      Studio 164a
  * @category    Admin
- * @package     Visionary
+ * @package     Sofa
  * @subpackage 	Customizer
  * @since       1.0.0
  */
-class Visionary_Customizer {
+class Sofa_Customizer {
 
     /**
-     * @var     Visionary_Theme   $theme
+     * @var     Sofa_Theme   $theme
      */
     private $theme;
 
@@ -24,25 +24,25 @@ class Visionary_Customizer {
      * Instantiate the object, but only if this is the start phase. 
      *
      * @static
-     * @param   Visionary_Theme           $theme
+     * @param   Sofa_Theme           $theme
      * @param   WP_Customize_Manager    $wp_customize 
      * @return  void
      */
-    public static function start( Visionary_Theme $theme, WP_Customize_Manager $wp_customize ) {
+    public static function start( Sofa_Theme $theme, WP_Customize_Manager $wp_customize ) {
         if ( ! $theme->is_start() ) {
             return;
         }
 
-        new Visionary_Customizer( $theme, $wp_customize );
+        new Sofa_Customizer( $theme, $wp_customize );
     }
 
     /**
      * Instantiate the object. 
      * 
-     * @param   Visionary_Theme           $theme
+     * @param   Sofa_Theme           $theme
      * @param   WP_Customize_Manager    $wp_customize 
      */
-    private function __construct( Visionary_Theme $theme, WP_Customize_Manager $wp_customize ) {
+    private function __construct( Sofa_Theme $theme, WP_Customize_Manager $wp_customize ) {
         $this->theme = $theme;
             
         add_action('after_setup_theme', array( $this, 'setup_callbacks' ) );
@@ -83,7 +83,7 @@ class Visionary_Customizer {
      * @since 	1.0.0
      */
     public function customize_preview_init() {        
-        wp_enqueue_script( 'visionary_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), $this->theme->get_theme_version(), true );
+        wp_enqueue_script( 'sofa_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), $this->theme->get_theme_version(), true );
     }     
 
     /**
@@ -100,7 +100,7 @@ class Visionary_Customizer {
          * The saved styles may no longer be valid, so delete them. They 
          * will be re-created on the next page load.
          */
-        delete_transient( Visionary_Customizer_Styles::get_transient_key() );
+        delete_transient( Sofa_Customizer_Styles::get_transient_key() );
     }    
 }
 

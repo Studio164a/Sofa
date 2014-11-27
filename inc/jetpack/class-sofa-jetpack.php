@@ -1,39 +1,39 @@
 <?php 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Visionary_Jetpack' ) ) : 
+if ( ! class_exists( 'Sofa_Jetpack' ) ) : 
 
 /**
  * Handles how Jetpack is integrated into the theme.
  * 
- * @package 	Visionary
+ * @package 	Sofa
  * @subpackage 	Jetpack
  * @author 		Studio 164a
  * @since 		1.0.0
  */
-class Visionary_Jetpack {
+class Sofa_Jetpack {
 
 	/**
-	 * @var 	Visionary_Theme
+	 * @var 	Sofa_Theme
 	 */
 	private $theme;
 
 	/**
 	 * This creates an instance of this class. 
 	 *
-	 * If the visionary_theme_start hook has already run, this will not do anything.
+	 * If the sofa_theme_start hook has already run, this will not do anything.
 	 * 
-	 * @param 	Visionary_Theme 	$theme
+	 * @param 	Sofa_Theme 	$theme
 	 * @static
 	 * @access 	public
 	 * @since 	1.0.0
 	 */
-	public static function start( Visionary_Theme $theme ) {
+	public static function start( Sofa_Theme $theme ) {
 		if ( ! $theme->is_start() ) {
 			return;
 		}
 		
-		new Visionary_Jetpack($theme);	
+		new Sofa_Jetpack($theme);	
 	}
 
 	/** 
@@ -43,7 +43,7 @@ class Visionary_Jetpack {
 	 * @access 	private
 	 * @since 	1.0.0
 	 */
-	private function __construct( Visionary_Theme $theme ) {
+	private function __construct( Sofa_Theme $theme ) {
 		$this->theme = $theme;
 
 		add_action( 'after_setup_theme', array( $this, 'setup_jetpack' ) );
