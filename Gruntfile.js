@@ -41,7 +41,16 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['sync']
             }        
-        },        
+        },  
+
+        // Sass
+        sass: {
+            dist: {
+                files: {
+                    'style.css' : 'sass/style.scss'
+                }
+            }
+        },
 
         // Sync
         sync: {            
