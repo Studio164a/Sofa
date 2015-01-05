@@ -1,0 +1,15 @@
+#colophon {
+	@include padding(3.2, 0, 0);
+	background-color: $color__green_light;
+	text-align: center;
+	color: rgb( 255, 255, 255 );
+
+	a {
+		color: rgb( 255, 255, 255 );
+		text-decoration: none;
+	}
+
+	p {
+		@include margin-bottom( 3.2 );
+	}
+}

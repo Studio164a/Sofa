@@ -1,0 +1,72 @@
+// Establishes a set of breakpoints.
+@mixin bp($point, $min : true) {
+
+	$bp-phone			: 20em !default; 	// 320px
+	$bp-phone-large		: 30em !default; 	// 480px
+	$bp-tablet-small	: 37.5em !default; 	// 600px
+	$bp-tablet 			: 48em !default;	// 768px
+	$bp-tablet-large 	: 50em !default; 	// 800px
+	$bp-full 			: 64em !default;	// 1024px
+
+	@if $point == phone {
+		@if ( $min ) {
+			@media (min-width: #{$bp-phone}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-phone}) { @content };
+		}
+	}
+	@else if $point == phone-large {
+		@if ( $min ) {
+			@media (min-width: #{$bp-phone-large}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-phone-large}) { @content };
+		}
+	}
+	@else if $point == tablet-small {
+		@if ( $min ) {
+			@media (min-width: #{$bp-tablet-small}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-tablet-small}) { @content };
+		}
+	}
+	@else if $point == tablet {
+		@if ( $min ) {
+			@media (min-width: #{$bp-tablet}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-tablet}) { @content };
+		}
+	}
+	@else if $point == tablet-large {
+		@if ( $min ) {
+			@media (min-width: #{$bp-tablet-large}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-tablet-large}) { @content };
+		}
+	}
+	@else if $point == full {
+		@if ( $min ) {
+			@media (min-width: #{$bp-full}) { @content };
+		}
+		@else {
+			@media (max-width: #{$bp-full}) { @content };
+		}
+	}
+	@else {
+		@if ( $min ) {
+			@media (min-width: #{$point}) { @content };
+		}
+		@else {
+			@media (max-width: #{$point}) { @content };
+		}
+	}
+}
+
+// Retina media query
+@mixin retina() {
+	@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) { @content };
+}

@@ -1,19 +1,19 @@
 /*
-Theme Name: Sofa
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>Sofa</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0-wpcom
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: Sofa
+Theme Name: 	Sofa
+Theme URI: 		
+Author: 		Studio 164a
+Author URI: 	http://164a.com/
+Description: 	Hi. I'm a starter theme called <code>Sofa</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Version: 		1.0.0
+License: 		GNU General Public License v2 or later
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 	Sofa
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- Sofa is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Sofa is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -35,14 +35,16 @@ and Blueprint http://www.blueprintcss.org/
 7.0 Alignments
 8.0 Clearings
 9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Infinite scroll
-12.0 Media
-	12.1 Captions
-	12.2 Galleries
+10.0 Header
+11.0 Content
+	11.1 Posts and pages
+	11.2 Asides
+	11.3 Comments
+12.0 Footer
+13.0 Infinite scroll
+14.0 Media
+	14.1 Captions
+	14.2 Galleries
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -93,16 +95,26 @@ and Blueprint http://www.blueprintcss.org/
 @import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
-10.0 Content
+10.0 Header
+--------------------------------------------------------------*/
+@import "site/masthead/header";
+
+/*--------------------------------------------------------------
+11.0 Content
 --------------------------------------------------------------*/
 @import "site/site";
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
+12.0 Footer
+--------------------------------------------------------------*/
+@import "site/colophon/footer";
+
+/*--------------------------------------------------------------
+13.0 Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-12.0 Media
+14.0 Media
 --------------------------------------------------------------*/
 @import "media/media";

@@ -74,6 +74,8 @@ class Sofa_Theme {
 
         $this->maybe_start_customizer();
 
+        $this->maybe_start_jetpack();
+
 		$this->attach_hooks_and_filters();
 
 		/**
@@ -83,6 +85,21 @@ class Sofa_Theme {
 		 * this phase.
 		 */
 		do_action( 'sofa_theme_start', $this );
+	}
+
+	/**
+	 * Returns the version number of the theme. 
+	 *
+	 * @return 	string
+	 * @access  public
+	 * @since 	1.0.0
+	 */
+	public function get_theme_version() {
+		if ( defined( 'SOFA_DEBUG' ) && SOFA_DEBUG ) {
+            return time();
+        }
+
+        return self::VERSION;	
 	}
 
 	/**
@@ -170,7 +187,7 @@ class Sofa_Theme {
 
             require_once( get_template_directory() . '/inc/jetpack/class-sofa-jetpack.php');
 
-            Crafted_Jetpack::start( $this );
+            add_action( 'wpcharitable_theme_start', array( 'Sofa_Jetpack', 'start' ) );
         }        
     }
 

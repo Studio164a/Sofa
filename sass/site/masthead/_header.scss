@@ -1,0 +1,10 @@
+#masthead {
+	background-color: $color__background-header;
+
+	.site-branding {
+		@include padding-top( 2.9 );
+		@include padding-bottom( 2.9 );
+		text-align: center;
+		color: $color__text-header;
+	}
+}

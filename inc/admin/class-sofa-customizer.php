@@ -25,24 +25,22 @@ class Sofa_Customizer {
      *
      * @static
      * @param   Sofa_Theme           $theme
-     * @param   WP_Customize_Manager    $wp_customize 
      * @return  void
      */
-    public static function start( Sofa_Theme $theme, WP_Customize_Manager $wp_customize ) {
+    public static function start( Sofa_Theme $theme ) {
         if ( ! $theme->is_start() ) {
             return;
         }
 
-        new Sofa_Customizer( $theme, $wp_customize );
+        new Sofa_Customizer( $theme );
     }
 
     /**
      * Instantiate the object. 
      * 
      * @param   Sofa_Theme           $theme
-     * @param   WP_Customize_Manager    $wp_customize 
      */
-    private function __construct( Sofa_Theme $theme, WP_Customize_Manager $wp_customize ) {
+    private function __construct( Sofa_Theme $theme ) {
         $this->theme = $theme;
             
         add_action('after_setup_theme', array( $this, 'setup_callbacks' ) );

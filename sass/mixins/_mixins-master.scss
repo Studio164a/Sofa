@@ -1,8 +1,8 @@
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue * 10) + px;
-	font-size: $sizeValue + rem;
-}
+// Dimensions
+@import "dimensions";
+
+// Media queries
+@import "media-queries";
 
 // Center block
 @mixin center-block {
@@ -20,3 +20,6 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Button styles
+@import "buttons";

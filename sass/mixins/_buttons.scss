@@ -1,0 +1,32 @@
+@mixin button() {
+	@include padding(0.5, 2);
+	border: none;
+	border-radius: 4px;
+	background: $color__background-button;
+	color: $color__text-button;
+	@include font-size(1.2);
+	line-height: 1;	
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 900;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: none;
+}
+
+@mixin button-secondary() {
+	@include padding(0.5, 2);
+	border: 2px solid;
+	border-color: $color__background-button;
+	border-radius: 4px;
+	background: #fff;
+	color: $color__text-button;
+	@include font-size(1.2);
+	line-height: 1;	
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 900;	
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: none;	
+}
